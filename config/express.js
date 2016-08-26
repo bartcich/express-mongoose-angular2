@@ -14,6 +14,9 @@ import routes from '../server/routes';
 import config from './env';
 import APIError from '../server/helpers/APIError';
 
+import * as path from 'path';
+const _clientDir = '../client';
+
 const app = express();
 
 if (config.env === 'development') {
@@ -48,6 +51,18 @@ if (config.env === 'development') {
 
 // mount all routes on /api path
 app.use('/api', routes);
+
+// static files for angular app
+app.use('/js', express.static(path.resolve(__dirname, `${_clientDir}/js`)));
+app.use('/css', express.static(path.resolve(__dirname, `${_clientDir}/css`)));
+app.use('/assets', express.static(path.resolve(__dirname, `${_clientDir}/assets`)));
+
+// serve angular app
+app.get('*', (req, res) => {
+  // Load our src/app.html file
+  // Note that the root is set to the parent of this folder, ie the app root
+  res.sendFile('/client/index.html', { root: `${__dirname}/../` });
+});
 
 // if error is not an instanceOf APIError, convert it.
 app.use((err, req, res, next) => {

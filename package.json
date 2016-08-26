@@ -20,7 +20,7 @@
     "client": "client.start",
     "client.start": "webpack-dev-server --inline --progress --port 8080",
     "client.test": "karma start",
-    "client.build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "client.build": "rimraf dist/client && webpack --config config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install"
   },
   "repository": {

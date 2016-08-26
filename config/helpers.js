@@ -5,8 +5,3 @@ function root(args) {
   return path.join.apply(path, [_root].concat(args));
 }
 exports.root = root;
-
-function clientRoot(args) {
-  args = Array.prototype.slice.call(arguments, 0);
-  return path.join.apply(path, [_root + '/client'].concat(args));
-}

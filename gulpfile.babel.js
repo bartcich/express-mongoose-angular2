@@ -9,7 +9,8 @@ import * as isparta from 'isparta';
 const plugins = gulpLoadPlugins();
 
 const paths = {
-  js: ['./**/*.js', '!dist/**', '!node_modules/**', '!coverage/**'],
+  js: ['./**/*.js', '!dist/**', '!node_modules/**', '!coverage/**',
+    '!karma.conf.js', '!config/helpers.js', '!config/webpack.*'],
   nonJs: ['./package.json', './.gitignore'],
   tests: './server/tests/*.js'
 };
