@@ -10,6 +10,10 @@
     "npm": "3.9.x"
   },
   "scripts": {
+    "protractor": "protractor",
+    "webdriver-manager": "webdriver-manager",
+
+
     "start": "gulp serve",
     "build": "gulp",
     "lint": "gulp lint",
@@ -21,7 +25,11 @@
     "client.start": "webpack-dev-server --inline --progress --port 8080",
     "client.test": "karma start",
     "client.build": "rimraf dist/client && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+
+      "pree2e": "npm run webdriver-manager update -- --standalone",
+    "e2e": "npm run protractor",
+      "e2e:live": "npm run e2e -- --elementExplorer"
   },
   "repository": {
     "type": "git",
@@ -52,7 +60,7 @@
     "core-js": "^2.4.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.6",
-    "zone.js": "0.6.12",
+    "zone.js": "0.6.17",
 
     "bluebird": "^3.1.4",
     "body-parser": "^1.14.2",
@@ -82,16 +90,19 @@
     "html-webpack-plugin": "^2.15.0",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^0.3.8",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
+    "protractor": "^3.2.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.8.1",
+    "ts-node": "^0.7.3",
     "typescript": "^1.8.10",
     "typings": "^1.0.4",
     "webpack": "^1.13.0",
