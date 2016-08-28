@@ -13,23 +13,27 @@
     "protractor": "protractor",
     "webdriver-manager": "webdriver-manager",
 
+    "build": "npm run server.build && npm run client.build",
+    "test": "npm run server.test && npm run client.test",
 
-    "start": "gulp serve",
-    "build": "gulp",
-    "lint": "gulp lint",
-    "test": "gulp mocha",
-    "commit": "git-cz",
+    "server": "npm server.start",
+    "server.start": "gulp serve",
+    "server.build": "gulp",
+    "server.lint": "gulp lint",
+    "server.test": "gulp mocha",
     "report-coverage": "coveralls < ./coverage/lcov.info",
 
-    "client": "client.start",
+    "client": "npm run client.start",
     "client.start": "webpack-dev-server --inline --progress --port 8080",
-    "client.test": "karma start",
+    "client.karma": "karma start",
+    "client.test": "npm run client.karma && npm run client.e2e",
     "client.build": "rimraf dist/client && webpack --config config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install",
 
-      "pree2e": "npm run webdriver-manager update -- --standalone",
-    "e2e": "npm run protractor",
-      "e2e:live": "npm run e2e -- --elementExplorer"
+      "preclient.e2e": "npm run webdriver-manager update -- --standalone",
+    "client.e2e": "npm run protractor",
+      "cliente2e:live": "npm run e2e -- --elementExplorer"
+
   },
   "repository": {
     "type": "git",
