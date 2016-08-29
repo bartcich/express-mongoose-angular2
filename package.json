@@ -1,8 +1,8 @@
 {
-  "name": "express-mongoose-es6-rest-api",
-  "version": "1.0.0",
-  "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
-  "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
+  "name": "express-mongoose-angular2",
+  "version": "0.1",
+  "description": "A Boilerplate application for building fullstack app with express, mongoose backend and angular2 frontend",
+  "author": "Bartek Cichocki <bartek@codinarium.com>",
   "main": "index.js",
   "private": false,
   "engines": {
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git"
+    "url": "git@github.com:bartcich/express-mongoose-angular2.git"
   },
   "keywords": [
     "express",
