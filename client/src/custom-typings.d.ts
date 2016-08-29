@@ -49,6 +49,7 @@ declare module '*';
 // Extra variables that live on Global that will be replaced by webpack DefinePlugin
 declare var ENV: string;
 declare var HMR: boolean;
+declare var API_URL: string;
 declare var System: SystemJS;
 
 interface SystemJS {
@@ -58,6 +59,7 @@ interface SystemJS {
 interface GlobalEnvironment {
   ENV;
   HMR;
+  API_URL;
   SystemJS: SystemJS;
   System: SystemJS;
 }

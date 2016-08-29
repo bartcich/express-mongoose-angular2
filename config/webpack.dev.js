@@ -17,10 +17,12 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
+const API_URL = process.env.API_URL = 'http://localhost:4000';
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = webpackMerge(commonConfig.metadata, {
   host: HOST,
   port: PORT,
+  API_URL: API_URL,
   ENV: ENV,
   HMR: HMR
 });
@@ -109,11 +111,13 @@ module.exports = webpackMerge(commonConfig, {
     // NOTE: when adding more properties, make sure you include them in custom-typings.d.ts
     new DefinePlugin({
       'ENV': JSON.stringify(METADATA.ENV),
+      'API_URL': JSON.stringify(METADATA.API_URL),
       'HMR': METADATA.HMR,
       'process.env': {
         'ENV': JSON.stringify(METADATA.ENV),
         'NODE_ENV': JSON.stringify(METADATA.ENV),
         'HMR': METADATA.HMR,
+        'API_URL' : JSON.stringify(METADATA.API_URL),
       }
     }),
   ],

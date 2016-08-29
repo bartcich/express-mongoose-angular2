@@ -10,8 +10,10 @@ const plugins = gulpLoadPlugins();
 
 const paths = {
   js: ['./**/*.js', '!dist/**', '!node_modules/**', '!coverage/**',
-    '!config/helpers.js', '!config/webpack.*', '!./*.conf.js', '!./*config.js', '!config/karma.conf.js',
-     '!config/html-elements-plugin/**', '!config/protractor.conf.js'],
+      '!client/**',
+    '!config/helpers.js', '!config/webpack.*', '!./*.conf.js', '!./*config.js',
+    '!config/karma.conf.js', '!config/html-elements-plugin/**',
+    '!config/protractor.conf.js', '!config/spec-bundle.js'],
   nonJs: ['./package.json', './.gitignore'],
   tests: './server/tests/*.js'
 };
