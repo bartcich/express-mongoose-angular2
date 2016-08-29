@@ -3,16 +3,32 @@ import {
   inject
 } from '@angular/core/testing';
 
+import { BaseRequestOptions, Http } from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
 // Load the implementations that should be tested
 import { AppComponent } from './app.component';
+import { AuthService } from './auth/auth.service';
+import { LogService } from './log/log.service';
 
 describe('App', () => {
   // provide our implementations or mocks to the dependency injector
   beforeEach(() => addProviders([
-    AppComponent
+    BaseRequestOptions,
+    MockBackend,
+    {
+      provide: Http,
+      useFactory: function(backend, defaultOptions) {
+        return new Http(backend, defaultOptions);
+      },
+      deps: [MockBackend, BaseRequestOptions]
+    },
+
+    AppComponent,
+    AuthService,
+    LogService,
   ]));
 
-  it('should have a url', inject([ AppComponent ], (app) => {
+  it('should have a val', inject([ AppComponent ], (app) => {
     expect(app.val).toEqual('asfasdf');
   }));
 

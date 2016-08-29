@@ -6,6 +6,7 @@ import { HttpModule }    from '@angular/http';
 import { MATERIAL_MODULES } from './platform/angular2-material';
 
 import { AuthService } from './auth/auth.service';
+import { LogService } from './log/log.service';
 
 import { AppComponent } from './app.component';
 
@@ -21,6 +22,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     AuthService,
+    LogService,
   ],
   bootstrap: [AppComponent]
 })

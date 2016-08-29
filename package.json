@@ -1,6 +1,6 @@
 {
   "name": "express-mongoose-angular2",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "A Boilerplate application for building fullstack app with express, mongoose backend and angular2 frontend",
   "author": "Bartek Cichocki <bartek@codinarium.com>",
   "main": "index.js",
