@@ -1,0 +1,22 @@
+.fixed-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    width: auto;
+    transition: opacity 0.1s ease-in;
+    will-change: opacity;
+    opacity: 1;
+}
+
+
+md-sidenav-layout md-sidenav {
+    width: 280px;
+}
+
+
+.app-content md-card {
+  margin: 20px;
+}
+

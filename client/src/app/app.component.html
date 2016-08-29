@@ -1,4 +1,33 @@
-<main>
-  <h1>Hello from Angular 2 App with Webpack</h1>
-  <img src="../../public/images/angular.png">
-</main>
+<md-sidenav-layout fullscreen>
+  <md-sidenav #sidenav mode="side" layout="row" [opened]="true">
+    <md-toolbar routerLink="/">
+      <div class="">
+      <md-toolbar-row>
+        <h3>Menu</h3>
+      </md-toolbar-row>
+      </div>
+    </md-toolbar>
+
+    <md-nav-list >
+      <a md-list-item role="listitem">
+        Link1
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+        <md-icon class="md-24" >menu</md-icon>
+    </button> Angular Material2 Example App
+
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+
+  <div class="app-content">
+    <md-card>
+      <h1>Hello from Angular 2 App with Webpack</h1>
+      <img src="/assets/images/angular.png">
+      <input [(ngModel)]="val" placeholder="name">
+    </md-card>
+  </div>
+</md-sidenav-layout>
