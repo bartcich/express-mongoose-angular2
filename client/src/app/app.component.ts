@@ -16,12 +16,7 @@ import { LogService } from './log/log.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  protected val = 'asfasdf';
-  protected status = '';
 
   constructor(private auth: AuthService, private logger: LogService) { }
 
-  checkHealth(): void {
-    this.auth.checkHealth().then(status => this.status = status);
-  }
  }

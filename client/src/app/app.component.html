@@ -9,8 +9,8 @@
     </md-toolbar>
 
     <md-nav-list >
-      <a md-list-item role="listitem">
-        Link1
+      <a md-list-item role="listitem" routerLink="/dashboard" routerLinkActive="active">
+        Dashbaord
       </a>
     </md-nav-list>
   </md-sidenav>
@@ -24,12 +24,7 @@
   </md-toolbar>
 
   <div class="app-content">
-    <md-card>
-      <h1>Hello from Angular 2 App with Webpack</h1>
-      <img src="/assets/images/angular.png">
-      <input [(ngModel)]="val" placeholder="name">
-      <button md-button (click)="checkHealth()">Check Status</button>
-      <span *ngIf="status">Status {{status}}</span>
-    </md-card>
+      <router-outlet></router-outlet>
+
   </div>
 </md-sidenav-layout>

@@ -28,8 +28,4 @@ describe('App', () => {
     LogService,
   ]));
 
-  it('should have a val', inject([ AppComponent ], (app) => {
-    expect(app.val).toEqual('asfasdf');
-  }));
-
 });
