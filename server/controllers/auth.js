@@ -21,14 +21,14 @@ function login(req, res, next) {
   // Ideally you'll fetch this from the db
   // Idea here was to show how jwt works with simplicity
   if (req.body.username === user.username && req.body.password === user.password) {
-    var today = new Date();
-    var exp = new Date(today);
-    //exp.setDate(today.getDate() + 60);
-    exp.setMinutes(today.getMinutes()+1);
+    const today = new Date();
+    const exp = new Date(today);
+    // exp.setDate(today.getDate() + 60);
+    exp.setMinutes(today.getMinutes() + 1);
 
     const token = jwt.sign({
       username: user.username,
-      exp: parseInt(exp.getTime() / 1000)
+      exp: parseInt(exp.getTime() / 1000, 10)
     }, config.jwtSecret);
     return res.json({
       token,
