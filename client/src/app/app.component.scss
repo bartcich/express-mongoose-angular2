@@ -10,6 +10,22 @@
     opacity: 1;
 }
 
+.not-logged {
+    padding: 40px;
+    background: #ddd;
+    width: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    md-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
 
 md-sidenav-layout md-sidenav {
     width: 280px;

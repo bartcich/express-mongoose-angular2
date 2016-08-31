@@ -51,7 +51,8 @@ export class LogService {
         JSON.stringify(body),
         {headers: new Headers({'Content-Type': 'application/json'})}
       ).toPromise()
-      .then(() => null);
+      .then(() => null)
+      .catch(() => null);
     }
   }
 
