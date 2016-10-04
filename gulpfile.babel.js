@@ -88,7 +88,7 @@ gulp.task('pre-test', () =>
 // triggers mocha test with code coverage
 gulp.task('test', ['pre-test', 'set-env'], () => {
   let reporters;
-  let	exitCode = 0;
+  let exitCode = 0;
 
   if (plugins.util.env['code-coverage-reporter']) {
     reporters = [...options.codeCoverage.reporters, plugins.util.env['code-coverage-reporter']];
