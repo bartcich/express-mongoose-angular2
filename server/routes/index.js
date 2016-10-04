@@ -4,7 +4,7 @@ import authRoutes from './auth';
 
 import { clientLogger } from '../../config/winston';
 
-const router = express.Router();	// eslint-disable-line new-cap
+const router = express.Router(); // eslint-disable-line new-cap
 
 /** GET /health-check - Check service health */
 router.get('/health-check', (req, res) => {
