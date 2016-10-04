@@ -2,7 +2,7 @@ import express from 'express';
 import userRoutes from './user';
 import authRoutes from './auth';
 
-import { clientLogger } from '../../config/winston';
+import { clientLogger } from '../../config/server/winston';
 
 const router = express.Router(); // eslint-disable-line new-cap
 

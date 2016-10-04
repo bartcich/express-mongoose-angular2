@@ -1,9 +1,9 @@
 import express from 'express';
 import validate from 'express-validation';
 import expressJwt from 'express-jwt';
-import paramValidation from '../../config/param-validation';
+import paramValidation from '../../config/server/param-validation';
 import authCtrl from '../controllers/auth';
-import config from '../../config/env';
+import config from '../../config/server/env';
 
 const router = express.Router(); // eslint-disable-line new-cap
 

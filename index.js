@@ -1,7 +1,7 @@
 import Promise from 'bluebird';
 import mongoose from 'mongoose';
-import config from './config/env';
-import app from './config/express';
+import config from './config/server/env';
+import app from './config/server/express';
 
 // plugin bluebird promise in mongoose
 mongoose.Promise = Promise;

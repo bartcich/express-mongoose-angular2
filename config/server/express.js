@@ -9,13 +9,14 @@ import httpStatus from 'http-status';
 import expressWinston from 'express-winston';
 import expressValidation from 'express-validation';
 import helmet from 'helmet';
-import { logger as winstonInstance } from './winston';
-import routes from '../server/routes';
-import config from './env';
-import APIError from '../server/helpers/APIError';
-
 import * as path from 'path';
-const _clientDir = '../client';
+import { logger as winstonInstance } from './winston';
+import routes from '../../server/routes';
+import config from './env';
+import APIError from '../../server/helpers/APIError';
+
+
+const _clientDir = '../../client';
 
 const app = express();
 
@@ -43,9 +44,9 @@ if (config.env === 'development') {
   expressWinston.responseWhitelist.push('body');
   app.use(expressWinston.logger({
     winstonInstance,
-    meta: true, 	// optional: log meta data about request (defaults to true)
+    meta: true, // optional: log meta data about request (defaults to true)
     msg: 'HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms',
-    colorStatus: true 	// Color the status code (default green, 3XX cyan, 4XX yellow, 5XX red).
+    colorStatus: true // Color the status code (default green, 3XX cyan, 4XX yellow, 5XX red).
   }));
 }
 
@@ -61,7 +62,7 @@ app.use('/assets', express.static(path.resolve(__dirname, `${_clientDir}/assets`
 app.get('*', (req, res) => {
   // Load our src/app.html file
   // Note that the root is set to the parent of this folder, ie the app root
-  res.sendFile('/client/index.html', { root: `${__dirname}/../` });
+  res.sendFile('/client/index.html', { root: `${__dirname}/../../` });
 });
 
 // if error is not an instanceOf APIError, convert it.
@@ -92,7 +93,7 @@ if (config.env !== 'test') {
 }
 
 // error handler, send stacktrace only during development
-app.use((err, req, res, next) =>		// eslint-disable-line no-unused-vars
+app.use((err, req, res, next) => // eslint-disable-line no-unused-vars
   res.status(err.status).json({
     message: err.isPublic ? err.message : httpStatus[err.status],
     stack: config.env === 'development' ? err.stack : {}
