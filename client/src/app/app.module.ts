@@ -3,7 +3,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }  from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
-import { MATERIAL_MODULES } from './platform/angular2-material';
+import { MaterialModule } from '@angular/material';
 
 import { routing } from './app.routing';
 
@@ -24,7 +24,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     HttpModule,
     FormsModule,
-    ...MATERIAL_MODULES,
+    MaterialModule.forRoot(),
     routing,
   ],
   declarations: [

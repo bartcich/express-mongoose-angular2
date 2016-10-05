@@ -8,8 +8,8 @@ import { LogService } from './log/log.service';
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [
-    '../../../node_modules/@angular2-material/core/style/core.css',
-    '../../../node_modules/@angular2-material/core/overlay/overlay.css',
+    '../../../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css',
+    '../../../node_modules/@angular/material/core/overlay/overlay.css',
     './app.component.scss',
     '../sass/main.scss'
   ],

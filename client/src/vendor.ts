@@ -21,26 +21,8 @@ import '@angularclass/hmr';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
-import '@angular2-material/core';
-import '@angular2-material/button';
-import '@angular2-material/card';
-import '@angular2-material/checkbox';
-import '@angular2-material/icon';
-import '@angular2-material/input';
-import '@angular2-material/list';
-import '@angular2-material/menu';
-import '@angular2-material/progress-bar';
-import '@angular2-material/progress-circle';
-import '@angular2-material/radio';
-import '@angular2-material/sidenav';
-import '@angular2-material/toolbar';
-import '@angular2-material/tooltip';
-
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
-
-import '../../node_modules/@angular2-material/core/style/core.css';
-import '../../node_modules/@angular2-material/core/overlay/overlay.css';
 
 if ('production' === ENV) {
   // Production
