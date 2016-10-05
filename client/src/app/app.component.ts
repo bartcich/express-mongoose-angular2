@@ -7,11 +7,11 @@ import { LogService } from './log/log.service';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styles: [
-    require('../../../node_modules/@angular2-material/core/style/core.css'),
-    require('../../../node_modules/@angular2-material/core/overlay/overlay.css'),
-    require('./app.component.scss'),
-    require('../sass/main.scss')
+  styleUrls: [
+    '../../../node_modules/@angular2-material/core/style/core.css',
+    '../../../node_modules/@angular2-material/core/overlay/overlay.css',
+    './app.component.scss',
+    '../sass/main.scss'
   ],
   encapsulation: ViewEncapsulation.None,
 })
