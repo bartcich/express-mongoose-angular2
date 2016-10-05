@@ -1,5 +1,5 @@
 import {
-  addProviders,
+  TestBed,
   inject
 } from '@angular/core/testing';
 
@@ -12,7 +12,7 @@ import { LogService } from './log/log.service';
 
 describe('App', () => {
   // provide our implementations or mocks to the dependency injector
-  beforeEach(() => addProviders([
+  beforeEach(() => TestBed.configureTestingModule([
     BaseRequestOptions,
     MockBackend,
     {

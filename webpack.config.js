@@ -1,7 +1,7 @@
 /**
  * @author: @AngularClass
  */
-
+/* eslint-disable */
 // Look in ./config folder for webpack.dev.js
 switch (process.env.NODE_ENV) {
   case 'prod':
@@ -17,3 +17,4 @@ switch (process.env.NODE_ENV) {
   default:
     module.exports = require('./config/client/webpack.dev')({env: 'development'});
 }
+/* eslint-enable */
