@@ -11,7 +11,7 @@ import expressValidation from 'express-validation';
 import helmet from 'helmet';
 import * as path from 'path';
 import { logger as winstonInstance } from './winston';
-import routes from '../../server/routes';
+import routes from '../../server/routes/index.route';
 import config from './env';
 import APIError from '../../server/helpers/APIError';
 

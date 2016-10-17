@@ -1,6 +1,6 @@
 import express from 'express';
-import userRoutes from './user';
-import authRoutes from './auth';
+import userRoutes from './user.route';
+import authRoutes from './auth.route';
 
 import { clientLogger } from '../../config/server/winston';
 
