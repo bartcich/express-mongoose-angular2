@@ -18,6 +18,8 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
+const V8LazyParseWebpackPlugin = require('v8-lazy-parse-webpack-plugin');
+
 /**
  * Webpack Constants
  */
@@ -156,14 +158,25 @@ module.exports = function (env) {
 
 
         beautify: false, // prod
-        mangle: {
-          screw_ie8: true,
-          keep_fnames: true
+        output: {
+          comments: false
         }, // prod
-        compress: {
+        mangle: {
           screw_ie8: true
         }, // prod
-        comments: false // prod
+        compress: {
+          screw_ie8: true,
+          warnings: false,
+          conditionals: true,
+          unused: true,
+          comparisons: true,
+          sequences: true,
+          dead_code: true,
+          evaluate: true,
+          if_return: true,
+          join_vars: true,
+          negate_iife: false // we need this for lazy v8
+        },
       }),
 
       /**
@@ -173,19 +186,15 @@ module.exports = function (env) {
        * See: http://webpack.github.io/docs/list-of-plugins.html#normalmodulereplacementplugin
        */
 
-      new NormalModuleReplacementPlugin(
+/*      new NormalModuleReplacementPlugin(
         /angular2-hmr/,
-        helpers.root('config/modules/angular2-hmr-prod.js')
+        helpers.root('config/empty.js')
+      ),*/
+
+      new NormalModuleReplacementPlugin(
+        /zone\.js(\\|\/)dist(\\|\/)long-stack-trace-zone/,
+        helpers.root('config/empty.js')
       ),
-
-      /**
-       * Plugin: IgnorePlugin
-       * Description: Don’t generate modules for requests matching the provided RegExp.
-       *
-       * See: http://webpack.github.io/docs/list-of-plugins.html#ignoreplugin
-       */
-
-      // new IgnorePlugin(/angular2-hmr/),
 
       /**
        * Plugin: CompressionPlugin
@@ -206,21 +215,9 @@ module.exports = function (env) {
        * See: https://gist.github.com/sokra/27b24881210b56bbaff7
        */
       new LoaderOptionsPlugin({
+        minimize: true,
         debug: false,
         options: {
-
-          /**
-           * Static analysis linter for TypeScript advanced options configuration
-           * Description: An extensible linter for the TypeScript language.
-           *
-           * See: https://github.com/wbuchwalter/tslint-loader
-           */
-          tslint: {
-            emitErrors: true,
-            failOnHint: true,
-            resourcePath: 'client/src'
-          },
-
 
           /**
            * Html loader advanced options
