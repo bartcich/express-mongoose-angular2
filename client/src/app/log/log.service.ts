@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { AppSettings } from '../app.settings';
 
+import { environment } from '../../environments/environment';
+
 import { LogLevel } from './log-level';
 
 import 'rxjs/add/operator/toPromise';
@@ -47,7 +49,7 @@ export class LogService {
           message: message,
         }
       };
-      this.http.post(`${API_URL}/api/logger`,
+      this.http.post(`${environment.API_URL}/api/logger`,
         JSON.stringify(body),
         {headers: new Headers({'Content-Type': 'application/json'})}
       ).toPromise()

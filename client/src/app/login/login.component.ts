@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
       })
       .catch(res => {
         this.queryInProgress = false;
+        console.log(res);
         if (res.status === 401) {
           this.loginFailed = true;
         }

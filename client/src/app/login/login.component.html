@@ -3,11 +3,10 @@
   <md-progress-bar mode="{{queryInProgress ? 'query' : 'determinate'}}"></md-progress-bar>
   <form #loginForm="ngForm" (ngSubmit)="login();">
     <md-card-content>
-
       <md-input placeholder="Username" #username="ngModel" [(ngModel)]="credentials.username" name="username" required dividerColor="{{ loginFailed ? 'warn' : 'primary' }}"></md-input>
       <md-input type="password" placeholder="Password" [(ngModel)]="credentials.password" name="password" required dividerColor="{{ loginFailed ? 'warn' : 'primary' }}">
-        <md-hint [hidden]="!loginFailed">
-          <span>Wrong login or password.</span>
+        <md-hint *ngIf="loginFailed">
+          <span>Wrong login or password. </span>
         </md-hint>
       </md-input>
 
