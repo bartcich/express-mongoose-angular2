@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 import { AuthService } from './auth/auth.service';
 import { LogService } from './log/log.service';
