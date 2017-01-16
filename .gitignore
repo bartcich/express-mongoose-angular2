@@ -39,7 +39,7 @@ coverage
 build/Release
 
 # Dependency directory
-node_modules
+/node_modules/
 
 # Optional npm cache directory
 .npm
@@ -48,4 +48,10 @@ node_modules
 .node_repl_history
 
 # Compiled Angular
-compiled/
+/compiled/
+
+# Angular #
+*.ngfactory.ts
+*.css.shim.ts
+*.ngsummary.json
+*.shim.ngstyle.ts
