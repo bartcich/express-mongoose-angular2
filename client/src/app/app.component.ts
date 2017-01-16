@@ -9,7 +9,6 @@ import { LogService } from './log/log.service';
   templateUrl: './app.component.html',
   styleUrls: [
     '../../../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css',
-    '../../../node_modules/@angular/material/core/overlay/overlay.css',
     './app.component.scss',
     '../sass/main.scss'
   ],
