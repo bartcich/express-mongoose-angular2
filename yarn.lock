@@ -43,11 +43,9 @@
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@angular/http/-/http-2.4.1.tgz#f06067e370c44d025ed00a03ef704f6c46ea59ac"
 
-"@angular/material@2.0.0-alpha.10":
-  version "2.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-2.0.0-alpha.10.tgz#c9f28b52aa9d0f71670e6ce163e22052ef63fcc2"
-  dependencies:
-    "@types/hammerjs" "^2.0.30"
+"@angular/material@^2.0.0-beta.1":
+  version "2.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-2.0.0-beta.1.tgz#106a0b79fb2b48a7606a0682c4e5d0bbe03364a0"
 
 "@angular/platform-browser-dynamic@2.4.1":
   version "2.4.1"
@@ -86,7 +84,7 @@
   version "0.9.35"
   resolved "https://registry.yarnpkg.com/@types/core-js/-/core-js-0.9.35.tgz#444064e63711cdcc62ea844d27642f6efc2285f2"
 
-"@types/hammerjs@^2.0.30", "@types/hammerjs@^2.0.33":
+"@types/hammerjs@^2.0.33":
   version "2.0.34"
   resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.34.tgz#9cbac4f41cb039436141785e1be50b3ab10a04a9"
 
