@@ -1,3 +1,5 @@
+yarn.lock -diff
+
 # Convert text file line endings to lf
 * text=auto
 *.js text
