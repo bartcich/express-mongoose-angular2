@@ -128,7 +128,7 @@
     "karma-remap-coverage": "^0.1.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "1.8.0",
-    "ngc-webpack": "^1.0.1",
+    "ngc-webpack": "^1.0.2",
     "node-sass": "3.12.2",
     "parse5": "^2.2.2",
     "protractor": "^4.0.14",
