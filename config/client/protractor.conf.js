@@ -1,49 +1,32 @@
-/**
- * @author: @AngularClass
- */
+// Protractor configuration file, see link for more information
+// https://github.com/angular/protractor/blob/master/lib/config.ts
 
-//require('ts-node/register');
-var helpers = require('./helpers');
+/*global jasmine */
+var SpecReporter = require('jasmine-spec-reporter');
 
 exports.config = {
-  baseUrl: 'http://localhost:3000/',
-
-  // use `npm run e2e`
+  allScriptsTimeout: 11000,
   specs: [
-    helpers.root('client/src/**/**.e2e.ts'),
-    helpers.root('client/src/**/*.e2e.ts')
+    './client/e2e/**/*.e2e-spec.ts'
   ],
-  exclude: [],
-
-  framework: 'jasmine2',
-
-  allScriptsTimeout: 110000,
-
-  jasmineNodeOpts: {
-    showTiming: true,
-    showColors: true,
-    isVerbose: false,
-    includeStackTrace: false,
-    defaultTimeoutInterval: 400000
+  capabilities: {
+    'browserName': 'chrome'
   },
   directConnect: true,
-
-  capabilities: {
-    'browserName': 'chrome',
-    'chromeOptions': {
-      'args': ['show-fps-counter=true']
-    }
+  baseUrl: 'http://localhost:4200/',
+  framework: 'jasmine',
+  jasmineNodeOpts: {
+    showColors: true,
+    defaultTimeoutInterval: 30000,
+    print: function() {}
   },
-
+  useAllAngular2AppRoots: true,
+  beforeLaunch: function() {
+    require('ts-node').register({
+      project: 'e2e'
+    });
+  },
   onPrepare: function() {
-    browser.ignoreSynchronization = true;
-  },
-
-  /**
-   * Angular 2 configuration
-   *
-   * useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on the page instead of just the one matching
-   * `rootEl`
-   */
-   useAllAngular2AppRoots: true
+    jasmine.getEnv().addReporter(new SpecReporter());
+  }
 };

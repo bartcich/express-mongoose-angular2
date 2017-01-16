@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
+import { environment } from '../../environments/environment';
+
 import { LogService } from '../log/log.service';
 import { AuthService } from '../auth/auth.service';
 
@@ -19,7 +21,7 @@ export class HttpService {
     return Observable.fromPromise(this.getHeaders(url, false))
       .flatMap(headers => {
 
-        return this.http.get(`${API_URL}${url}`, { headers: headers })
+        return this.http.get(`${environment.API_URL}${url}`, { headers: headers })
           .map(this.extractData)
           .catch((error) =>
             this.errorHandler(error)
@@ -31,7 +33,7 @@ export class HttpService {
     return Observable.fromPromise(this.getHeaders(url, true))
       .flatMap(headers => {
 
-        return this.http.post(`${API_URL}${url}`, JSON.stringify(body), { headers: headers })
+        return this.http.post(`${environment.API_URL}${url}`, JSON.stringify(body), { headers: headers })
           .map(this.extractData)
           .catch((error) =>
             this.errorHandler(error)
@@ -43,7 +45,7 @@ export class HttpService {
     return Observable.fromPromise(this.getHeaders(url, true))
       .flatMap(headers => {
 
-        return this.http.put(`${API_URL}${url}`, JSON.stringify(body), { headers: headers })
+        return this.http.put(`${environment.API_URL}${url}`, JSON.stringify(body), { headers: headers })
           .map(this.extractData)
           .catch((error) =>
             this.errorHandler(error)
@@ -55,7 +57,7 @@ export class HttpService {
     return Observable.fromPromise(this.getHeaders(url, false))
       .flatMap(headers => {
 
-        return this.http.delete(`${API_URL}${url}`, { headers: headers })
+        return this.http.delete(`${environment.API_URL}${url}`, { headers: headers })
           .map(this.extractData)
           .catch((error) =>
             this.errorHandler(error)

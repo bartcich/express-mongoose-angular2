@@ -10,7 +10,7 @@
 - CORS
 - and many more.
 
-## Client side based on [AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter)
+## Client side based on Angular Cli
 - Angular2
 - Angular Material 2
 - Webpack

@@ -54,9 +54,9 @@ if (config.env === 'development') {
 app.use('/api', routes);
 
 // static files for angular app
-app.use('/js', express.static(path.resolve(__dirname, `${_clientDir}/js`)));
-app.use('/css', express.static(path.resolve(__dirname, `${_clientDir}/css`)));
-app.use('/assets', express.static(path.resolve(__dirname, `${_clientDir}/assets`)));
+app.use('/', express.static(path.resolve(__dirname, `${_clientDir}`)));
+// app.use('/css', express.static(path.resolve(__dirname, `${_clientDir}/css`)));
+// app.use('/assets', express.static(path.resolve(__dirname, `${_clientDir}/assets`)));
 
 // serve angular app
 app.get('*', (req, res) => {
