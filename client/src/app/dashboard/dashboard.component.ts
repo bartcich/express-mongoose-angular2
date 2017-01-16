@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
       this.http.get('/api/auth/random-number')
       .toPromise()
       .then(data => {
-        this.status = data.num
+        this.status = data.num;
       })
       .catch(err => {
         console.log(err);

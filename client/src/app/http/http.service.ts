@@ -73,7 +73,7 @@ export class HttpService {
     return body || {};
   }
 
-  private getHeaders(url: string, addContentType: boolean = false) {
+  private getHeaders(url: string, addContentType = false) {
     let headers = new Headers();
 
     if (addContentType) {
